@@ -2,9 +2,9 @@
 using Shop.App_Data.Models;
 
 namespace Shop.App_Data.mocks {
-    public class MockCars : IAllCars {
+    public class MockCars : ICars {
 
-        private readonly ICarCategories _carCategories = new MockCategory();
+        private readonly ICarCategories _carCategories = new MockCarCategories();
 
         public IEnumerable<Car> Cars { 
             get {
@@ -45,7 +45,7 @@ namespace Shop.App_Data.mocks {
 
         public IEnumerable<Car> GetFavCars { get; set; }
 
-        Car IAllCars.getCar(int id) {
+        public Car getCar(int id) {
             throw new NotImplementedException();
         }
     }

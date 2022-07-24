@@ -2,7 +2,7 @@
 using Shop.App_Data.Models;
 
 namespace Shop.App_Data.mocks {
-    public class MockCategory : ICarCategories {
+    public class MockCarCategories : ICarCategories {
         public IEnumerable<Category> AllCategories {
             get {
                 return new List<Category> {

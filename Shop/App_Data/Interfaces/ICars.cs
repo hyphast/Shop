@@ -1,7 +1,7 @@
 ﻿using Shop.App_Data.Models;
 
 namespace Shop.App_Data.Interfaces {
-    public interface IAllCars {
+    public interface ICars {
 
         IEnumerable<Car> Cars { get; }
         IEnumerable<Car> GetFavCars { get; set; }
