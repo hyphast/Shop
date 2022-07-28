@@ -1,26 +1,18 @@
-﻿@using Shop.App_Data.Models
+﻿@using Shop.View_Models
+@model CarsListViewModel
 
-@model IEnumerable<Car>
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <meta name="viewport" content="width=device.width" />
-        <title>List</title>
-    </head>
-    <body>
-        <h2>Список автомобилей</h2>
+<h3>Список автомобилей</h3>
+<h4>@Model.curCategory</h4>
+<div class="row mt-5 mb-5">
     @{
-        foreach(var car in Model) {
-            <div>
-                <h3>Модель: @car.name</h3>
-                <p>Цена: @car.price.ToString("c")</p>
-            </div>
+        foreach(var car in Model.allCars) {
+                    <div class="col">
+                        <img class="img-fluid rounded" style="width: 350px; height: 200px;" src="@car.img" alt="@car.name"/>
+                        <h3>Модель: @car.name</h3>
+                        <p>Цена: @car.price.ToString("c")</p>
+                        <p>@car.shortDesc</p>
+                        <button type="button" class="btn btn-primary">Подробнее</button>
+                    </div>
         }
     }
-    </body>
-</html>
+</div>
